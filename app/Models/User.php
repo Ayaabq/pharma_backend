@@ -25,11 +25,13 @@ class User extends Authenticatable
         'phone',
         'email',
         'password',
+'fcm_token'
     ];
     public function orders(){
         return $this->hasMany(Order::class);
 
     }
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -51,10 +53,13 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-     function sendPasswordResetNotification($token)
-    {
-        $url='https://spa.test/reset-password?token=' . $token;
+
+public function sendPasswordResetNotification($token)
+{
+$url='https://spa.test/reset-password?token=' . $token;
         $this->notify(new ResetPasswordNotification($url));
-    }
+}
+
+
 
 }

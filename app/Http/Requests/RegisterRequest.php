@@ -25,7 +25,8 @@ class RegisterRequest extends FormRequest
             'name'=>['required','string'],
             'phone'=>['required','max:10','unique:users'],
             'email'=>['required','unique:users'],
-            'password'=>['required']
+            'password'=>['required'],
+'fcm_token'=>['required'],
         ];
     }
 }

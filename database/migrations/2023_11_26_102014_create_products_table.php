@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('company');
             $table->integer('quantity_available');
             $table->date('createdat');
-            $table->double('cost');   
+            $table->double('cost');
+$table->softDeletes();
             $table->timestamps();
         });
     }
